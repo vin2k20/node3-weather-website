@@ -8,7 +8,7 @@ const forecast = (latitude, longitude, callback) => {
         }else if(body.message){
             callback('Unable to find location', undefined)
         }else{
-            callback(undefined,{description: body.weather[0].description, temperature: body.main.temp-273.15, humidity: body.main.humidity})
+            callback(undefined,{description: body.weather[0].description, temperature: body.main.temp-273.15, humidity: body.main.humidity, feels: body.main.feels_like-273.15, min: body.main.temp_min-273.15, max: body.main.temp_max-273.15})
         }
     })
 }
